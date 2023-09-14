@@ -1,0 +1,1 @@
+go test -benchmem -run=^$ -bench ^Benchmark git.woa.com/trpc-vtproto/common/vbyte
