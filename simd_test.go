@@ -115,6 +115,6 @@ func BenchmarkDecodeCombineAPI(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_ = VbyteDecodeGroup((*uint8)(unsafe.Pointer(&d[0])), &out[0], vbyteNum)
+		_ = DecodeGroup((*uint8)(unsafe.Pointer(&d[0])), &out[0], vbyteNum)
 	}
 }
