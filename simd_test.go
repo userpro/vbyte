@@ -31,7 +31,6 @@ func decodeVarint(data []byte) (int64, int) {
 			break
 		}
 	}
-	iNdEx++
 	return v, iNdEx
 }
 
