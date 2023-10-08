@@ -1,4 +1,4 @@
-module git.woa.com/trpc-vtproto/common/vbyte
+module git.woa.com/userpro/common/vbyte
 
 go 1.20
 
