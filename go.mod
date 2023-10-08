@@ -1,4 +1,4 @@
-module git.woa.com/userpro/common/vbyte
+module github.com/userpro/vbyte
 
 go 1.20
 
