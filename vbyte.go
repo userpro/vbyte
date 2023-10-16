@@ -31,7 +31,7 @@ func decodeVarintGroup(data *uint8, out *uint32, length uint64) (consumedBytes u
 var DecodeGroup = decodeVarintGroup
 
 func init() {
-	if cpuid.CPU.Supports(cpuid.AVX2) {
+	if cpuid.CPU.Supports(cpuid.SSE4) {
 		DecodeGroup = __masked_vbyte_decode
 	}
 }
