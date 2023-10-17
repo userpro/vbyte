@@ -4,4 +4,4 @@
 #  -DUSE_AVX2=0 -S *.c
 
 # python ../asm2asm/asm2asm.py ../op.s ./op.s
-python ./asm2asm/asm2asm.py ../simd.s ./simd.s
+python asm2asm/asm2asm.py ../simd.s ./simd.s

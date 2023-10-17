@@ -1,1 +1,1 @@
-go test -benchmem -run=^$ -bench ^Benchmark git.woa.com/trpc-vtproto/common/vbyte
+go test -benchmem -run=^$ -bench ^Benchmark github.com/userpro/vbyte -benchtime=5s

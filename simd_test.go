@@ -13,8 +13,7 @@ func encodeVarint(dAtA []byte, v uint64) []byte {
 		dAtA = append(dAtA, uint8(v&0x7f|0x80))
 		v >>= 7
 	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
+	return append(dAtA, uint8(v))
 }
 
 func decodeVarint(data []byte) (int64, int) {
@@ -35,19 +34,27 @@ func decodeVarint(data []byte) (int64, int) {
 }
 
 func Test__decode(t *testing.T) {
-	v := uint64(13033430)
-	data := encodeVarint(nil, v)
+	num := 256
+	data := setupDecodeData(num)
 
 	// simd 加速
-	out := make([]uint32, 10)
-	var cnt int32
-	__masked_vbyte_decode((*uint8)(unsafe.Pointer(&data[0])), &out[0], 1)
+	out1 := make([]uint32, num)
+	cnt1 := __masked_vbyte_decode((*uint8)(unsafe.Pointer(&data[0])), &out1[0], uint64(num))
 
 	// 传统方法
-	res, _ := decodeVarint(data)
+	out2 := make([]uint32, 0, num)
+	cnt2 := 0
+	for cnt2 < len(data) {
+		res, idx := decodeVarint(data[cnt2:])
+		cnt2 += idx
+		out2 = append(out2, uint32(res))
+	}
 
-	t.Log(out[0], cnt)
-	assert.EqualValues(t, res, out[0])
+	for i := 0; i < num; i++ {
+		assert.EqualValues(t, out1[i], out2[i])
+	}
+	t.Log(len(data), cnt1, cnt2)
+	assert.EqualValues(t, cnt1, cnt2)
 }
 
 func setupDecodeData(num int) []byte {
@@ -58,12 +65,12 @@ func setupDecodeData(num int) []byte {
 
 	data := make([]byte, 0, num*2)
 	for _, v := range a {
-		data = append(data, encodeVarint(data, uint64(v))...)
+		data = encodeVarint(data, uint64(v))
 	}
 	return data
 }
 
-const vbyteNum = 20
+const vbyteNum = 256
 
 // BenchmarkDecodeRaw ...
 func BenchmarkDecodeRaw(b *testing.B) {

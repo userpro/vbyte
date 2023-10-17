@@ -79,123 +79,123 @@ _masked_vbyte_decode:
 	LONG $0x20e2c149  // shlq         $32, %r10
 	WORD $0x0949; BYTE $0xca  // orq          %rcx, %r10
 	LONG $0x0030b841; WORD $0x0000  // movl         $48, %r8d
-	LONG $0x141d8d4c; WORD $0x000f; BYTE $0x00  // leaq         $3860(%rip), %r11  /* _combined_lookup+0(%rip) */
-	QUAD $0xffffff7c056ff9c5  // vmovdqa      $-132(%rip), %xmm0  /* LCPI0_6+0(%rip) */
-	QUAD $0xffffff840d6ff9c5  // vmovdqa      $-124(%rip), %xmm1  /* LCPI0_7+0(%rip) */
-	QUAD $0xffffff8c156ff9c5  // vmovdqa      $-116(%rip), %xmm2  /* LCPI0_8+0(%rip) */
-	QUAD $0xffffff34056f79c5  // vmovdqa      $-204(%rip), %xmm8  /* LCPI0_3+0(%rip) */
-	QUAD $0xffffff3c0d6f79c5  // vmovdqa      $-196(%rip), %xmm9  /* LCPI0_4+0(%rip) */
-	QUAD $0xffffff44156f79c5  // vmovdqa      $-188(%rip), %xmm10  /* LCPI0_5+0(%rip) */
-	QUAD $0xfffffeec1d2879c5  // vmovapd      $-276(%rip), %xmm11  /* LCPI0_0+0(%rip) */
-	QUAD $0xfffffef43d6ff9c5  // vmovdqa      $-268(%rip), %xmm7  /* LCPI0_1+0(%rip) */
-	QUAD $0xfffffefc1d6ff9c5  // vmovdqa      $-260(%rip), %xmm3  /* LCPI0_2+0(%rip) */
-	WORD $0x3145; BYTE $0xf6  // xorl         %r14d, %r14d
+	LONG $0x141d8d48; WORD $0x000f; BYTE $0x00  // leaq         $3860(%rip), %rbx  /* _combined_lookup+0(%rip) */
+	LONG $0x0d358d4c; WORD $0x002f; BYTE $0x00  // leaq         $12045(%rip), %r14  /* _vectorsrawbytes+0(%rip) */
+	QUAD $0xffffff75056ff9c5  // vmovdqa      $-139(%rip), %xmm0  /* LCPI0_6+0(%rip) */
+	QUAD $0xffffff7d0d6ff9c5  // vmovdqa      $-131(%rip), %xmm1  /* LCPI0_7+0(%rip) */
+	QUAD $0xffffff85156ff9c5  // vmovdqa      $-123(%rip), %xmm2  /* LCPI0_8+0(%rip) */
+	QUAD $0xffffff2d1d6ff9c5  // vmovdqa      $-211(%rip), %xmm3  /* LCPI0_3+0(%rip) */
+	QUAD $0xffffff35256ff9c5  // vmovdqa      $-203(%rip), %xmm4  /* LCPI0_4+0(%rip) */
+	QUAD $0xffffff3d2d6ff9c5  // vmovdqa      $-195(%rip), %xmm5  /* LCPI0_5+0(%rip) */
+	QUAD $0xfffffee53528f9c5  // vmovapd      $-283(%rip), %xmm6  /* LCPI0_0+0(%rip) */
+	QUAD $0xfffffeed3d6ff9c5  // vmovdqa      $-275(%rip), %xmm7  /* LCPI0_1+0(%rip) */
+	QUAD $0xfffffef5056f79c5  // vmovdqa      $-267(%rip), %xmm8  /* LCPI0_2+0(%rip) */
+	WORD $0x3145; BYTE $0xdb  // xorl         %r11d, %r11d
 	WORD $0x3145; BYTE $0xc9  // xorl         %r9d, %r9d
 	WORD $0xc031  // xorl         %eax, %eax
 LBB0_3:
-	LONG $0x6f7aa1c4; WORD $0x0724  // vmovdqu      (%rdi,%r8), %xmm4
-	LONG $0x6f7aa1c4; WORD $0x076c; BYTE $0x10  // vmovdqu      $16(%rdi,%r8), %xmm5
-	LONG $0x6f7aa1c4; WORD $0x0774; BYTE $0x20  // vmovdqu      $32(%rdi,%r8), %xmm6
-	LONG $0xfcd779c5  // vpmovmskb    %xmm4, %r15d
-	LONG $0xe5d779c5  // vpmovmskb    %xmm5, %r12d
+	LONG $0x6f7a21c4; WORD $0x070c  // vmovdqu      (%rdi,%r8), %xmm9
+	LONG $0x6f7a21c4; WORD $0x0754; BYTE $0x10  // vmovdqu      $16(%rdi,%r8), %xmm10
+	LONG $0x6f7a21c4; WORD $0x075c; BYTE $0x20  // vmovdqu      $32(%rdi,%r8), %xmm11
+	LONG $0xd77941c4; BYTE $0xf9  // vpmovmskb    %xmm9, %r15d
+	LONG $0xd77941c4; BYTE $0xe2  // vpmovmskb    %xmm10, %r12d
 	WORD $0x8944; BYTE $0xc1  // movl         %r8d, %ecx
 	WORD $0xc129  // subl         %eax, %ecx
 	WORD $0xc180; BYTE $0xd0  // addb         $-48, %cl
 	WORD $0xd349; BYTE $0xe2  // shlq         %cl, %r10
 	LONG $0x10e4c149  // shlq         $16, %r12
 	WORD $0x094d; BYTE $0xfc  // orq          %r15, %r12
-	WORD $0x094d; BYTE $0xd6  // orq          %r10, %r14
-	LONG $0xd6d779c5  // vpmovmskb    %xmm6, %r10d
+	WORD $0x094d; BYTE $0xd3  // orq          %r10, %r11
+	LONG $0xd77941c4; BYTE $0xd3  // vpmovmskb    %xmm11, %r10d
 	LONG $0x20e2c149  // shlq         $32, %r10
 	WORD $0x094d; BYTE $0xe2  // orq          %r12, %r10
 	LONG $0xf0788d4d  // leaq         $-16(%r8), %r15
 	LONG $0x30c08349  // addq         $48, %r8
-	LONG $0x000069e9; BYTE $0x00  // jmp          LBB0_4, $105(%rip)
-	QUAD $0x9090909090909090; WORD $0x9090; BYTE $0x90  // .p2align 4, 0x90
+	LONG $0x000060e9; BYTE $0x00  // jmp          LBB0_4, $96(%rip)
+	BYTE $0x90  // .p2align 4, 0x90
 LBB0_6:
-	LONG $0x2179e2c4; BYTE $0xec  // vpmovsxbd    %xmm4, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e2c  // vmovdqu      %xmm5, (%rsi,%r9,4)
-	LONG $0xec70f9c5; BYTE $0x55  // vpshufd      $85, %xmm4, %xmm5
-	LONG $0x2179e2c4; BYTE $0xed  // vpmovsxbd    %xmm5, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e6c; BYTE $0x10  // vmovdqu      %xmm5, $16(%rsi,%r9,4)
-	LONG $0xec70f9c5; BYTE $0xee  // vpshufd      $238, %xmm4, %xmm5
-	LONG $0x2179e2c4; BYTE $0xed  // vpmovsxbd    %xmm5, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e6c; BYTE $0x20  // vmovdqu      %xmm5, $32(%rsi,%r9,4)
-	LONG $0xe470f9c5; BYTE $0xff  // vpshufd      $255, %xmm4, %xmm4
-	LONG $0x2179e2c4; BYTE $0xe4  // vpmovsxbd    %xmm4, %xmm4
-	LONG $0x7f7aa1c4; WORD $0x8e64; BYTE $0x30  // vmovdqu      %xmm4, $48(%rsi,%r9,4)
-	WORD $0xb541; BYTE $0x10  // movb         $16, %r13b
+	LONG $0x217942c4; BYTE $0xd1  // vpmovsxbd    %xmm9, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e14  // vmovdqu      %xmm10, (%rsi,%r9,4)
+	LONG $0x707941c4; WORD $0x55d1  // vpshufd      $85, %xmm9, %xmm10
+	LONG $0x217942c4; BYTE $0xd2  // vpmovsxbd    %xmm10, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e54; BYTE $0x10  // vmovdqu      %xmm10, $16(%rsi,%r9,4)
+	LONG $0x707941c4; WORD $0xeed1  // vpshufd      $238, %xmm9, %xmm10
+	LONG $0x217942c4; BYTE $0xd2  // vpmovsxbd    %xmm10, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e54; BYTE $0x20  // vmovdqu      %xmm10, $32(%rsi,%r9,4)
+	LONG $0x707941c4; WORD $0xffc9  // vpshufd      $255, %xmm9, %xmm9
+	LONG $0x217942c4; BYTE $0xc9  // vpmovsxbd    %xmm9, %xmm9
+	LONG $0x7f7a21c4; WORD $0x8e4c; BYTE $0x30  // vmovdqu      %xmm9, $48(%rsi,%r9,4)
+	WORD $0x10b1  // movb         $16, %cl
 	LONG $0x0010bc41; WORD $0x0000  // movl         $16, %r12d
 LBB0_12:
-	LONG $0xcdb60f41  // movzbl       %r13b, %ecx
-	WORD $0xd349; BYTE $0xee  // shrq         %cl, %r14
+	WORD $0xb60f; BYTE $0xc9  // movzbl       %cl, %ecx
+	WORD $0xd349; BYTE $0xeb  // shrq         %cl, %r11
 	WORD $0x0148; BYTE $0xc8  // addq         %rcx, %rax
 	WORD $0x014d; BYTE $0xe1  // addq         %r12, %r9
-	LONG $0xfffe8349  // cmpq         $-1, %r14
-	LONG $0x0430840f; WORD $0x0000  // je           LBB0_13, $1072(%rip)
+	LONG $0xfffb8349  // cmpq         $-1, %r11
+	LONG $0x0464840f; WORD $0x0000  // je           LBB0_13, $1124(%rip)
 LBB0_4:
 	WORD $0x394c; BYTE $0xf8  // cmpq         %r15, %rax
-	LONG $0x00f9830f; WORD $0x0000  // jae          LBB0_14, $249(%rip)
-	LONG $0x24f0fbc5; BYTE $0x07  // vlddqu       (%rdi,%rax), %xmm4
-	LONG $0xf6854566  // testw        %r14w, %r14w
-	LONG $0xff8a840f; WORD $0xffff  // je           LBB0_6, $-118(%rip)
-	WORD $0x8944; BYTE $0xf3  // movl         %r14d, %ebx
-	LONG $0x0fffe381; WORD $0x0000  // andl         $4095, %ebx
-	LONG $0x24b60f45; BYTE $0x5b  // movzbl       (%r11,%rbx,2), %r12d
-	WORD $0x894c; BYTE $0xe1  // movq         %r12, %rcx
-	LONG $0x04e1c148  // shlq         $4, %rcx
-	LONG $0x6cb60f45; WORD $0x015b  // movzbl       $1(%r11,%rbx,2), %r13d
-	LONG $0xd81d8d48; WORD $0x002d; BYTE $0x00  // leaq         $11736(%rip), %rbx  /* _vectorsrawbytes+0(%rip) */
-	LONG $0x2c6ff9c5; BYTE $0x19  // vmovdqa      (%rcx,%rbx), %xmm5
+	LONG $0x00f8830f; WORD $0x0000  // jae          LBB0_14, $248(%rip)
+	LONG $0x0cf07bc5; BYTE $0x07  // vlddqu       (%rdi,%rax), %xmm9
+	LONG $0xdb854566  // testw        %r11w, %r11w
+	LONG $0xff89840f; WORD $0xffff  // je           LBB0_6, $-119(%rip)
+	WORD $0x8944; BYTE $0xd9  // movl         %r11d, %ecx
+	LONG $0x0fffe181; WORD $0x0000  // andl         $4095, %ecx
+	LONG $0x24b60f44; BYTE $0x4b  // movzbl       (%rbx,%rcx,2), %r12d
+	WORD $0x894d; BYTE $0xe5  // movq         %r12, %r13
+	LONG $0x04e5c149  // shlq         $4, %r13
+	LONG $0x4b4cb60f; BYTE $0x01  // movzbl       $1(%rbx,%rcx,2), %ecx
+	LONG $0x6f7901c4; WORD $0x3554; BYTE $0x00  // vmovdqa      (%r13,%r14), %xmm10
 	LONG $0x3ffc8349  // cmpq         $63, %r12
-	LONG $0x0039870f; WORD $0x0000  // ja           LBB0_9, $57(%rip)
-	LONG $0x0059e2c4; BYTE $0xe5  // vpshufb      %xmm5, %xmm4, %xmm4
-	LONG $0xe8dbd9c5  // vpand        %xmm0, %xmm4, %xmm5
-	LONG $0xd471d9c5; BYTE $0x01  // vpsrlw       $1, %xmm4, %xmm4
-	LONG $0xe1dbd9c5  // vpand        %xmm1, %xmm4, %xmm4
-	LONG $0xe5ebd9c5  // vpor         %xmm5, %xmm4, %xmm4
-	LONG $0xeadbd9c5  // vpand        %xmm2, %xmm4, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e2c  // vmovdqu      %xmm5, (%rsi,%r9,4)
-	LONG $0xd472d9c5; BYTE $0x10  // vpsrld       $16, %xmm4, %xmm4
-	LONG $0xd679a1c4; WORD $0x8e64; BYTE $0x10  // vmovq        %xmm4, $16(%rsi,%r9,4)
+	LONG $0x003e870f; WORD $0x0000  // ja           LBB0_9, $62(%rip)
+	LONG $0x003142c4; BYTE $0xca  // vpshufb      %xmm10, %xmm9, %xmm9
+	LONG $0xd0db31c5  // vpand        %xmm0, %xmm9, %xmm10
+	LONG $0x7131c1c4; WORD $0x01d1  // vpsrlw       $1, %xmm9, %xmm9
+	LONG $0xc9db31c5  // vpand        %xmm1, %xmm9, %xmm9
+	LONG $0xeb3141c4; BYTE $0xca  // vpor         %xmm10, %xmm9, %xmm9
+	LONG $0xd2db31c5  // vpand        %xmm2, %xmm9, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e14  // vmovdqu      %xmm10, (%rsi,%r9,4)
+	LONG $0x7231c1c4; WORD $0x10d1  // vpsrld       $16, %xmm9, %xmm9
+	LONG $0xd67921c4; WORD $0x8e4c; BYTE $0x10  // vmovq        %xmm9, $16(%rsi,%r9,4)
 	LONG $0x0006bc41; WORD $0x0000  // movl         $6, %r12d
-	LONG $0xffff69e9; BYTE $0xff  // jmp          LBB0_12, $-151(%rip)
-	WORD $0x9090  // .p2align 4, 0x90
+	LONG $0xffff6de9; BYTE $0xff  // jmp          LBB0_12, $-147(%rip)
+	LONG $0x90909090  // .p2align 4, 0x90
 LBB0_9:
 	LONG $0x90fc8041  // cmpb         $-112, %r12b
-	LONG $0x0034870f; WORD $0x0000  // ja           LBB0_11, $52(%rip)
-	LONG $0x0059e2c4; BYTE $0xe5  // vpshufb      %xmm5, %xmm4, %xmm4
-	LONG $0xecdbb9c5  // vpand        %xmm4, %xmm8, %xmm5
-	LONG $0xd472c9c5; BYTE $0x01  // vpsrld       $1, %xmm4, %xmm6
-	LONG $0xf6dbb1c5  // vpand        %xmm6, %xmm9, %xmm6
-	LONG $0xedebc9c5  // vpor         %xmm5, %xmm6, %xmm5
-	LONG $0xd472d9c5; BYTE $0x02  // vpsrld       $2, %xmm4, %xmm4
-	LONG $0xe4dba9c5  // vpand        %xmm4, %xmm10, %xmm4
-	LONG $0xe4ebd1c5  // vpor         %xmm4, %xmm5, %xmm4
-	LONG $0x7f7aa1c4; WORD $0x8e24  // vmovdqu      %xmm4, (%rsi,%r9,4)
+	LONG $0x0038870f; WORD $0x0000  // ja           LBB0_11, $56(%rip)
+	LONG $0x003142c4; BYTE $0xca  // vpshufb      %xmm10, %xmm9, %xmm9
+	LONG $0xd3db31c5  // vpand        %xmm3, %xmm9, %xmm10
+	LONG $0x7221c1c4; WORD $0x01d1  // vpsrld       $1, %xmm9, %xmm11
+	LONG $0xdcdb21c5  // vpand        %xmm4, %xmm11, %xmm11
+	LONG $0xeb2141c4; BYTE $0xd2  // vpor         %xmm10, %xmm11, %xmm10
+	LONG $0x7231c1c4; WORD $0x02d1  // vpsrld       $2, %xmm9, %xmm9
+	LONG $0xcddb31c5  // vpand        %xmm5, %xmm9, %xmm9
+	LONG $0xeb2941c4; BYTE $0xc9  // vpor         %xmm9, %xmm10, %xmm9
+	LONG $0x7f7a21c4; WORD $0x8e0c  // vmovdqu      %xmm9, (%rsi,%r9,4)
 	LONG $0x0004bc41; WORD $0x0000  // movl         $4, %r12d
-	LONG $0xffff29e9; BYTE $0xff  // jmp          LBB0_12, $-215(%rip)
+	LONG $0xffff27e9; BYTE $0xff  // jmp          LBB0_12, $-217(%rip)
 LBB0_11:
-	LONG $0xe454a1c5  // vandpd       %xmm4, %xmm11, %xmm4
-	LONG $0x0059e2c4; BYTE $0xe5  // vpshufb      %xmm5, %xmm4, %xmm4
-	LONG $0xefd5d9c5  // vpmullw      %xmm7, %xmm4, %xmm5
-	LONG $0xf573c9c5; BYTE $0x08  // vpsllq       $8, %xmm5, %xmm6
-	LONG $0xd473d9c5; BYTE $0x38  // vpsrlq       $56, %xmm4, %xmm4
-	LONG $0xe5ebd9c5  // vpor         %xmm5, %xmm4, %xmm4
-	LONG $0xe6ebd9c5  // vpor         %xmm6, %xmm4, %xmm4
-	LONG $0x0059e2c4; BYTE $0xe3  // vpshufb      %xmm3, %xmm4, %xmm4
-	LONG $0xd679a1c4; WORD $0x8e24  // vmovq        %xmm4, (%rsi,%r9,4)
+	LONG $0xce5431c5  // vandpd       %xmm6, %xmm9, %xmm9
+	LONG $0x003142c4; BYTE $0xca  // vpshufb      %xmm10, %xmm9, %xmm9
+	LONG $0xd7d531c5  // vpmullw      %xmm7, %xmm9, %xmm10
+	LONG $0x7331c1c4; WORD $0x38d1  // vpsrlq       $56, %xmm9, %xmm9
+	LONG $0x7321c1c4; WORD $0x08f2  // vpsllq       $8, %xmm10, %xmm11
+	LONG $0xeb3141c4; BYTE $0xca  // vpor         %xmm10, %xmm9, %xmm9
+	LONG $0xeb2141c4; BYTE $0xc9  // vpor         %xmm9, %xmm11, %xmm9
+	LONG $0x003142c4; BYTE $0xc8  // vpshufb      %xmm8, %xmm9, %xmm9
+	LONG $0xd67921c4; WORD $0x8e0c  // vmovq        %xmm9, (%rsi,%r9,4)
 	LONG $0x0002bc41; WORD $0x0000  // movl         $2, %r12d
-	LONG $0xfffef4e9; BYTE $0xff  // jmp          LBB0_12, $-268(%rip)
-	QUAD $0x9090909090909090; LONG $0x90909090; BYTE $0x90  // .p2align 4, 0x90
+	LONG $0xfffeeee9; BYTE $0xff  // jmp          LBB0_12, $-274(%rip)
+	LONG $0x90909090; BYTE $0x90  // .p2align 4, 0x90
 LBB0_14:
 	LONG $0x70498d49  // leaq         $112(%r9), %rcx
 	WORD $0x3948; BYTE $0xd1  // cmpq         %rdx, %rcx
-	LONG $0xfe3f820f; WORD $0xffff  // jb           LBB0_3, $-449(%rip)
-	WORD $0x2949; BYTE $0xc0  // subq         %rax, %r8
+	LONG $0xfe46820f; WORD $0xffff  // jb           LBB0_3, $-442(%rip)
+	WORD $0x2941; BYTE $0xc0  // subl         %eax, %r8d
 	LONG $0xd0488d41  // leal         $-48(%r8), %ecx
 	WORD $0xd349; BYTE $0xe2  // shlq         %cl, %r10
-	WORD $0x094d; BYTE $0xf2  // orq          %r14, %r10
+	WORD $0x094d; BYTE $0xda  // orq          %r11, %r10
 	LONG $0x00000be9; BYTE $0x00  // jmp          LBB0_16, $11(%rip)
 LBB0_1:
 	WORD $0x3145; BYTE $0xc0  // xorl         %r8d, %r8d
@@ -203,182 +203,181 @@ LBB0_1:
 	WORD $0x3145; BYTE $0xc9  // xorl         %r9d, %r9d
 	WORD $0xc031  // xorl         %eax, %eax
 LBB0_16:
-	WORD $0x634d; BYTE $0xf8  // movslq       %r8d, %r15
-	LONG $0x391c8d4b  // leaq         (%r9,%r15), %rbx
-	WORD $0x3948; BYTE $0xd3  // cmpq         %rdx, %rbx
-	LONG $0x0237830f; WORD $0x0000  // jae          LBB0_31, $567(%rip)
+	WORD $0x6349; BYTE $0xc8  // movslq       %r8d, %rcx
+	LONG $0x09348d4d  // leaq         (%r9,%rcx), %r14
+	WORD $0x3949; BYTE $0xd6  // cmpq         %rdx, %r14
+	LONG $0x025d830f; WORD $0x0000  // jae          LBB0_31, $605(%rip)
 	LONG $0xcf1d8d4c; WORD $0x000c; BYTE $0x00  // leaq         $3279(%rip), %r11  /* _combined_lookup+0(%rip) */
-	LONG $0xc8358d4c; WORD $0x002c; BYTE $0x00  // leaq         $11464(%rip), %r14  /* _vectorsrawbytes+0(%rip) */
+	LONG $0xc81d8d48; WORD $0x002c; BYTE $0x00  // leaq         $11464(%rip), %rbx  /* _vectorsrawbytes+0(%rip) */
 	QUAD $0xfffffd30056ff9c5  // vmovdqa      $-720(%rip), %xmm0  /* LCPI0_6+0(%rip) */
 	QUAD $0xfffffd380d6ff9c5  // vmovdqa      $-712(%rip), %xmm1  /* LCPI0_7+0(%rip) */
 	QUAD $0xfffffd40156ff9c5  // vmovdqa      $-704(%rip), %xmm2  /* LCPI0_8+0(%rip) */
-	QUAD $0xfffffce8056f79c5  // vmovdqa      $-792(%rip), %xmm8  /* LCPI0_3+0(%rip) */
-	QUAD $0xfffffcf00d6f79c5  // vmovdqa      $-784(%rip), %xmm9  /* LCPI0_4+0(%rip) */
-	QUAD $0xfffffcf8156f79c5  // vmovdqa      $-776(%rip), %xmm10  /* LCPI0_5+0(%rip) */
-	QUAD $0xfffffca01d2879c5  // vmovapd      $-864(%rip), %xmm11  /* LCPI0_0+0(%rip) */
+	QUAD $0xfffffce81d6ff9c5  // vmovdqa      $-792(%rip), %xmm3  /* LCPI0_3+0(%rip) */
+	QUAD $0xfffffcf0256ff9c5  // vmovdqa      $-784(%rip), %xmm4  /* LCPI0_4+0(%rip) */
+	QUAD $0xfffffcf82d6ff9c5  // vmovdqa      $-776(%rip), %xmm5  /* LCPI0_5+0(%rip) */
+	QUAD $0xfffffca03528f9c5  // vmovapd      $-864(%rip), %xmm6  /* LCPI0_0+0(%rip) */
 	QUAD $0xfffffca83d6ff9c5  // vmovdqa      $-856(%rip), %xmm7  /* LCPI0_1+0(%rip) */
-	QUAD $0xfffffcb01d6ff9c5  // vmovdqa      $-848(%rip), %xmm3  /* LCPI0_2+0(%rip) */
-	LONG $0x00006fe9; BYTE $0x00  // jmp          LBB0_18, $111(%rip)
+	QUAD $0xfffffcb0056f79c5  // vmovdqa      $-848(%rip), %xmm8  /* LCPI0_2+0(%rip) */
+	LONG $0x000073e9; BYTE $0x00  // jmp          LBB0_18, $115(%rip)
 	QUAD $0x9090909090909090; WORD $0x9090; BYTE $0x90  // .p2align 4, 0x90
 LBB0_24:
-	LONG $0x2179e2c4; BYTE $0xec  // vpmovsxbd    %xmm4, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e2c  // vmovdqu      %xmm5, (%rsi,%r9,4)
-	LONG $0xec70f9c5; BYTE $0x55  // vpshufd      $85, %xmm4, %xmm5
-	LONG $0x2179e2c4; BYTE $0xed  // vpmovsxbd    %xmm5, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e6c; BYTE $0x10  // vmovdqu      %xmm5, $16(%rsi,%r9,4)
-	LONG $0xec70f9c5; BYTE $0xee  // vpshufd      $238, %xmm4, %xmm5
-	LONG $0x2179e2c4; BYTE $0xed  // vpmovsxbd    %xmm5, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e6c; BYTE $0x20  // vmovdqu      %xmm5, $32(%rsi,%r9,4)
-	LONG $0xe470f9c5; BYTE $0xff  // vpshufd      $255, %xmm4, %xmm4
-	LONG $0x2179e2c4; BYTE $0xe4  // vpmovsxbd    %xmm4, %xmm4
-	LONG $0x7f7aa1c4; WORD $0x8e64; BYTE $0x30  // vmovdqu      %xmm4, $48(%rsi,%r9,4)
+	LONG $0x217942c4; BYTE $0xd1  // vpmovsxbd    %xmm9, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e14  // vmovdqu      %xmm10, (%rsi,%r9,4)
+	LONG $0x707941c4; WORD $0x55d1  // vpshufd      $85, %xmm9, %xmm10
+	LONG $0x217942c4; BYTE $0xd2  // vpmovsxbd    %xmm10, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e54; BYTE $0x10  // vmovdqu      %xmm10, $16(%rsi,%r9,4)
+	LONG $0x707941c4; WORD $0xeed1  // vpshufd      $238, %xmm9, %xmm10
+	LONG $0x217942c4; BYTE $0xd2  // vpmovsxbd    %xmm10, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e54; BYTE $0x20  // vmovdqu      %xmm10, $32(%rsi,%r9,4)
+	LONG $0x707941c4; WORD $0xffc9  // vpshufd      $255, %xmm9, %xmm9
+	LONG $0x217942c4; BYTE $0xc9  // vpmovsxbd    %xmm9, %xmm9
+	LONG $0x7f7a21c4; WORD $0x8e4c; BYTE $0x30  // vmovdqu      %xmm9, $48(%rsi,%r9,4)
 	WORD $0x10b1  // movb         $16, %cl
-	LONG $0x000010bb; BYTE $0x00  // movl         $16, %ebx
+	LONG $0x0010be41; WORD $0x0000  // movl         $16, %r14d
 LBB0_30:
 	WORD $0xb60f; BYTE $0xc9  // movzbl       %cl, %ecx
 	WORD $0x0148; BYTE $0xc8  // addq         %rcx, %rax
 	WORD $0x2941; BYTE $0xc8  // subl         %ecx, %r8d
 	WORD $0xd349; BYTE $0xea  // shrq         %cl, %r10
-	WORD $0x0149; BYTE $0xd9  // addq         %rbx, %r9
-	WORD $0x634d; BYTE $0xf8  // movslq       %r8d, %r15
-	LONG $0x391c8d4b  // leaq         (%r9,%r15), %rbx
-	WORD $0x3948; BYTE $0xd3  // cmpq         %rdx, %rbx
-	LONG $0x016d830f; WORD $0x0000  // jae          LBB0_31, $365(%rip)
+	WORD $0x014d; BYTE $0xf1  // addq         %r14, %r9
+	WORD $0x6349; BYTE $0xc8  // movslq       %r8d, %rcx
+	LONG $0x09348d4d  // leaq         (%r9,%rcx), %r14
+	WORD $0x3949; BYTE $0xd6  // cmpq         %rdx, %r14
+	LONG $0x018f830f; WORD $0x0000  // jae          LBB0_31, $399(%rip)
 LBB0_18:
 	LONG $0x0ff88341  // cmpl         $15, %r8d
-	LONG $0x003f8f0f; WORD $0x0000  // jg           LBB0_23, $63(%rip)
-	LONG $0x1f4b8d48  // leaq         $31(%rbx), %rcx
-	WORD $0x3948; BYTE $0xd1  // cmpq         %rdx, %rcx
-	LONG $0x00e5830f; WORD $0x0000  // jae          LBB0_21, $229(%rip)
-	WORD $0x0149; BYTE $0xff  // addq         %rdi, %r15
-	LONG $0xf07ba1c4; WORD $0x3824  // vlddqu       (%rax,%r15), %xmm4
-	LONG $0xdcd7f9c5  // vpmovmskb    %xmm4, %ebx
-	LONG $0xf07ba1c4; WORD $0x3864; BYTE $0x10  // vlddqu       $16(%rax,%r15), %xmm4
-	LONG $0xfcd779c5  // vpmovmskb    %xmm4, %r15d
+	LONG $0x003c8f0f; WORD $0x0000  // jg           LBB0_23, $60(%rip)
+	LONG $0x1f7e8d4d  // leaq         $31(%r14), %r15
+	WORD $0x3949; BYTE $0xd7  // cmpq         %rdx, %r15
+	LONG $0x0101830f; WORD $0x0000  // jae          LBB0_21, $257(%rip)
+	WORD $0x0148; BYTE $0xf9  // addq         %rdi, %rcx
+	LONG $0x0cf07bc5; BYTE $0x08  // vlddqu       (%rax,%rcx), %xmm9
+	LONG $0xd77941c4; BYTE $0xf1  // vpmovmskb    %xmm9, %r14d
+	LONG $0x4cf07bc5; WORD $0x1008  // vlddqu       $16(%rax,%rcx), %xmm9
+	LONG $0xd77941c4; BYTE $0xf9  // vpmovmskb    %xmm9, %r15d
 	WORD $0x8944; BYTE $0xc1  // movl         %r8d, %ecx
-	WORD $0xd348; BYTE $0xe3  // shlq         %cl, %rbx
+	WORD $0xd349; BYTE $0xe6  // shlq         %cl, %r14
 	LONG $0x10488d41  // leal         $16(%r8), %ecx
 	WORD $0xd349; BYTE $0xe7  // shlq         %cl, %r15
-	WORD $0x094c; BYTE $0xd3  // orq          %r10, %rbx
-	WORD $0x094c; BYTE $0xfb  // orq          %r15, %rbx
+	WORD $0x094d; BYTE $0xf7  // orq          %r14, %r15
+	WORD $0x094d; BYTE $0xfa  // orq          %r15, %r10
 	LONG $0x20c08341  // addl         $32, %r8d
-	WORD $0x8949; BYTE $0xda  // movq         %rbx, %r10
 LBB0_23:
-	LONG $0x24f0fbc5; BYTE $0x07  // vlddqu       (%rdi,%rax), %xmm4
+	LONG $0x0cf07bc5; BYTE $0x07  // vlddqu       (%rdi,%rax), %xmm9
 	LONG $0xd2854566  // testw        %r10w, %r10w
-	LONG $0xff44840f; WORD $0xffff  // je           LBB0_24, $-188(%rip)
+	LONG $0xff43840f; WORD $0xffff  // je           LBB0_24, $-189(%rip)
 LBB0_25:
 	WORD $0x8944; BYTE $0xd1  // movl         %r10d, %ecx
 	LONG $0x0fffe181; WORD $0x0000  // andl         $4095, %ecx
-	LONG $0x3cb60f45; BYTE $0x4b  // movzbl       (%r11,%rcx,2), %r15d
-	WORD $0x894c; BYTE $0xfb  // movq         %r15, %rbx
-	LONG $0x04e3c148  // shlq         $4, %rbx
+	LONG $0x34b60f45; BYTE $0x4b  // movzbl       (%r11,%rcx,2), %r14d
+	WORD $0x894d; BYTE $0xf7  // movq         %r14, %r15
+	LONG $0x04e7c149  // shlq         $4, %r15
 	LONG $0x4cb60f41; WORD $0x014b  // movzbl       $1(%r11,%rcx,2), %ecx
-	LONG $0x6f79a1c4; WORD $0x332c  // vmovdqa      (%rbx,%r14), %xmm5
-	LONG $0x3fff8349  // cmpq         $63, %r15
-	LONG $0x0039870f; WORD $0x0000  // ja           LBB0_27, $57(%rip)
-	LONG $0x0059e2c4; BYTE $0xe5  // vpshufb      %xmm5, %xmm4, %xmm4
-	LONG $0xe8dbd9c5  // vpand        %xmm0, %xmm4, %xmm5
-	LONG $0xd471d9c5; BYTE $0x01  // vpsrlw       $1, %xmm4, %xmm4
-	LONG $0xe1dbd9c5  // vpand        %xmm1, %xmm4, %xmm4
-	LONG $0xe5ebd9c5  // vpor         %xmm5, %xmm4, %xmm4
-	LONG $0xeadbd9c5  // vpand        %xmm2, %xmm4, %xmm5
-	LONG $0x7f7aa1c4; WORD $0x8e2c  // vmovdqu      %xmm5, (%rsi,%r9,4)
-	LONG $0xd472d9c5; BYTE $0x10  // vpsrld       $16, %xmm4, %xmm4
-	LONG $0xd679a1c4; WORD $0x8e64; BYTE $0x10  // vmovq        %xmm4, $16(%rsi,%r9,4)
-	LONG $0x000006bb; BYTE $0x00  // movl         $6, %ebx
-	LONG $0xffff28e9; BYTE $0xff  // jmp          LBB0_30, $-216(%rip)
-	WORD $0x9090; BYTE $0x90  // .p2align 4, 0x90
+	LONG $0x6f7941c4; WORD $0x1f14  // vmovdqa      (%r15,%rbx), %xmm10
+	LONG $0x3ffe8349  // cmpq         $63, %r14
+	LONG $0x0048870f; WORD $0x0000  // ja           LBB0_27, $72(%rip)
+	LONG $0x003142c4; BYTE $0xca  // vpshufb      %xmm10, %xmm9, %xmm9
+	LONG $0xd0db31c5  // vpand        %xmm0, %xmm9, %xmm10
+	LONG $0x7131c1c4; WORD $0x01d1  // vpsrlw       $1, %xmm9, %xmm9
+	LONG $0xc9db31c5  // vpand        %xmm1, %xmm9, %xmm9
+	LONG $0xeb3141c4; BYTE $0xca  // vpor         %xmm10, %xmm9, %xmm9
+	LONG $0xd2db31c5  // vpand        %xmm2, %xmm9, %xmm10
+	LONG $0x7f7a21c4; WORD $0x8e14  // vmovdqu      %xmm10, (%rsi,%r9,4)
+	LONG $0x7231c1c4; WORD $0x10d1  // vpsrld       $16, %xmm9, %xmm9
+	LONG $0xd67921c4; WORD $0x8e4c; BYTE $0x10  // vmovq        %xmm9, $16(%rsi,%r9,4)
+	LONG $0x0006be41; WORD $0x0000  // movl         $6, %r14d
+	LONG $0xffff27e9; BYTE $0xff  // jmp          LBB0_30, $-217(%rip)
+	QUAD $0x9090909090909090; LONG $0x90909090; WORD $0x9090  // .p2align 4, 0x90
 LBB0_27:
-	LONG $0x90ff8041  // cmpb         $-112, %r15b
-	LONG $0x0073870f; WORD $0x0000  // ja           LBB0_29, $115(%rip)
-	LONG $0x0059e2c4; BYTE $0xe5  // vpshufb      %xmm5, %xmm4, %xmm4
-	LONG $0xecdbb9c5  // vpand        %xmm4, %xmm8, %xmm5
-	LONG $0xd472c9c5; BYTE $0x01  // vpsrld       $1, %xmm4, %xmm6
-	LONG $0xf6dbb1c5  // vpand        %xmm6, %xmm9, %xmm6
-	LONG $0xedebc9c5  // vpor         %xmm5, %xmm6, %xmm5
-	LONG $0xd472d9c5; BYTE $0x02  // vpsrld       $2, %xmm4, %xmm4
-	LONG $0xe4dba9c5  // vpand        %xmm4, %xmm10, %xmm4
-	LONG $0xe4ebd1c5  // vpor         %xmm4, %xmm5, %xmm4
-	LONG $0x7f7aa1c4; WORD $0x8e24  // vmovdqu      %xmm4, (%rsi,%r9,4)
-	LONG $0x000004bb; BYTE $0x00  // movl         $4, %ebx
-	LONG $0xfffee8e9; BYTE $0xff  // jmp          LBB0_30, $-280(%rip)
-	WORD $0x9090; BYTE $0x90  // .p2align 4, 0x90
+	LONG $0x90fe8041  // cmpb         $-112, %r14b
+	LONG $0x0084870f; WORD $0x0000  // ja           LBB0_29, $132(%rip)
+	LONG $0x003142c4; BYTE $0xca  // vpshufb      %xmm10, %xmm9, %xmm9
+	LONG $0xd3db31c5  // vpand        %xmm3, %xmm9, %xmm10
+	LONG $0x7221c1c4; WORD $0x01d1  // vpsrld       $1, %xmm9, %xmm11
+	LONG $0xdcdb21c5  // vpand        %xmm4, %xmm11, %xmm11
+	LONG $0xeb2141c4; BYTE $0xd2  // vpor         %xmm10, %xmm11, %xmm10
+	LONG $0x7231c1c4; WORD $0x02d1  // vpsrld       $2, %xmm9, %xmm9
+	LONG $0xcddb31c5  // vpand        %xmm5, %xmm9, %xmm9
+	LONG $0xeb2941c4; BYTE $0xc9  // vpor         %xmm9, %xmm10, %xmm9
+	LONG $0x7f7a21c4; WORD $0x8e0c  // vmovdqu      %xmm9, (%rsi,%r9,4)
+	LONG $0x0004be41; WORD $0x0000  // movl         $4, %r14d
+	LONG $0xfffed7e9; BYTE $0xff  // jmp          LBB0_30, $-297(%rip)
+	QUAD $0x9090909090909090; LONG $0x90909090; WORD $0x9090  // .p2align 4, 0x90
 LBB0_21:
-	LONG $0x0fc38348  // addq         $15, %rbx
-	WORD $0x3948; BYTE $0xd3  // cmpq         %rdx, %rbx
-	LONG $0x0064830f; WORD $0x0000  // jae          LBB0_31, $100(%rip)
-	WORD $0x0149; BYTE $0xff  // addq         %rdi, %r15
-	LONG $0xf07ba1c4; WORD $0x3824  // vlddqu       (%rax,%r15), %xmm4
-	LONG $0xdcd7f9c5  // vpmovmskb    %xmm4, %ebx
+	LONG $0x0fc68349  // addq         $15, %r14
+	WORD $0x3949; BYTE $0xd6  // cmpq         %rdx, %r14
+	LONG $0x006a830f; WORD $0x0000  // jae          LBB0_31, $106(%rip)
+	WORD $0x0148; BYTE $0xf9  // addq         %rdi, %rcx
+	LONG $0x0cf07bc5; BYTE $0x08  // vlddqu       (%rax,%rcx), %xmm9
+	LONG $0xd77941c4; BYTE $0xf1  // vpmovmskb    %xmm9, %r14d
 	WORD $0x8944; BYTE $0xc1  // movl         %r8d, %ecx
-	WORD $0xe3d3  // shll         %cl, %ebx
-	WORD $0x6348; BYTE $0xcb  // movslq       %ebx, %rcx
+	WORD $0xd341; BYTE $0xe6  // shll         %cl, %r14d
+	WORD $0x6349; BYTE $0xce  // movslq       %r14d, %rcx
 	WORD $0x0949; BYTE $0xca  // orq          %rcx, %r10
 	LONG $0x10c08341  // addl         $16, %r8d
-	LONG $0x24f0fbc5; BYTE $0x07  // vlddqu       (%rdi,%rax), %xmm4
+	LONG $0x0cf07bc5; BYTE $0x07  // vlddqu       (%rdi,%rax), %xmm9
 	LONG $0xd2854566  // testw        %r10w, %r10w
-	LONG $0xff24850f; WORD $0xffff  // jne          LBB0_25, $-220(%rip)
-	LONG $0xfffe63e9; BYTE $0xff  // jmp          LBB0_24, $-413(%rip)
+	LONG $0xff04850f; WORD $0xffff  // jne          LBB0_25, $-252(%rip)
+	LONG $0xfffe42e9; BYTE $0xff  // jmp          LBB0_24, $-446(%rip)
 LBB0_29:
-	LONG $0xe454a1c5  // vandpd       %xmm4, %xmm11, %xmm4
-	LONG $0x0059e2c4; BYTE $0xe5  // vpshufb      %xmm5, %xmm4, %xmm4
-	LONG $0xefd5d9c5  // vpmullw      %xmm7, %xmm4, %xmm5
-	LONG $0xf573c9c5; BYTE $0x08  // vpsllq       $8, %xmm5, %xmm6
-	LONG $0xd473d9c5; BYTE $0x38  // vpsrlq       $56, %xmm4, %xmm4
-	LONG $0xe5ebd9c5  // vpor         %xmm5, %xmm4, %xmm4
-	LONG $0xe6ebd9c5  // vpor         %xmm6, %xmm4, %xmm4
-	LONG $0x0059e2c4; BYTE $0xe3  // vpshufb      %xmm3, %xmm4, %xmm4
-	LONG $0xd679a1c4; WORD $0x8e24  // vmovq        %xmm4, (%rsi,%r9,4)
-	LONG $0x000002bb; BYTE $0x00  // movl         $2, %ebx
-	LONG $0xfffe74e9; BYTE $0xff  // jmp          LBB0_30, $-396(%rip)
+	LONG $0xce5431c5  // vandpd       %xmm6, %xmm9, %xmm9
+	LONG $0x003142c4; BYTE $0xca  // vpshufb      %xmm10, %xmm9, %xmm9
+	LONG $0xd7d531c5  // vpmullw      %xmm7, %xmm9, %xmm10
+	LONG $0x7331c1c4; WORD $0x38d1  // vpsrlq       $56, %xmm9, %xmm9
+	LONG $0x7321c1c4; WORD $0x08f2  // vpsllq       $8, %xmm10, %xmm11
+	LONG $0xeb3141c4; BYTE $0xca  // vpor         %xmm10, %xmm9, %xmm9
+	LONG $0xeb2141c4; BYTE $0xc9  // vpor         %xmm9, %xmm11, %xmm9
+	LONG $0x003142c4; BYTE $0xc8  // vpshufb      %xmm8, %xmm9, %xmm9
+	LONG $0xd67921c4; WORD $0x8e0c  // vmovq        %xmm9, (%rsi,%r9,4)
+	LONG $0x0002be41; WORD $0x0000  // movl         $2, %r14d
+	LONG $0xfffe52e9; BYTE $0xff  // jmp          LBB0_30, $-430(%rip)
 LBB0_31:
 	WORD $0x3949; BYTE $0xd1  // cmpq         %rdx, %r9
-	LONG $0x0015820f; WORD $0x0000  // jb           LBB0_32, $21(%rip)
-	LONG $0x0000b1e9; BYTE $0x00  // jmp          LBB0_38, $177(%rip)
-	BYTE $0x90  // .p2align 4, 0x90
+	LONG $0x001f820f; WORD $0x0000  // jb           LBB0_32, $31(%rip)
+	LONG $0x0000c0e9; BYTE $0x00  // jmp          LBB0_38, $192(%rip)
+	QUAD $0x9090909090909090; WORD $0x9090; BYTE $0x90  // .p2align 4, 0x90
 LBB0_37:
-	WORD $0x014c; BYTE $0xd0  // addq         %r10, %rax
+	WORD $0x0148; BYTE $0xc8  // addq         %rcx, %rax
 	WORD $0xff49; BYTE $0xc1  // incq         %r9
 	WORD $0x394c; BYTE $0xca  // cmpq         %r9, %rdx
-	LONG $0x00a1840f; WORD $0x0000  // je           LBB0_38, $161(%rip)
+	LONG $0x00a6840f; WORD $0x0000  // je           LBB0_38, $166(%rip)
 LBB0_32:
-	LONG $0x070cb60f  // movzbl       (%rdi,%rax), %ecx
-	WORD $0xe183; BYTE $0x7f  // andl         $127, %ecx
-	LONG $0x8e0c8942  // movl         %ecx, (%rsi,%r9,4)
-	LONG $0x0001ba41; WORD $0x0000  // movl         $1, %r10d
+	LONG $0x14b60f44; BYTE $0x07  // movzbl       (%rdi,%rax), %r10d
+	LONG $0x7fe28341  // andl         $127, %r10d
+	LONG $0x8e148946  // movl         %r10d, (%rsi,%r9,4)
+	LONG $0x000001b9; BYTE $0x00  // movl         $1, %ecx
 	LONG $0x00073c80  // cmpb         $0, (%rdi,%rax)
-	LONG $0xffd6890f; WORD $0xffff  // jns          LBB0_37, $-42(%rip)
-	LONG $0x075cb60f; BYTE $0x01  // movzbl       $1(%rdi,%rax), %ebx
-	WORD $0xe383; BYTE $0x7f  // andl         $127, %ebx
-	WORD $0xe3c1; BYTE $0x07  // shll         $7, %ebx
-	WORD $0xcb09  // orl          %ecx, %ebx
-	LONG $0x8e1c8942  // movl         %ebx, (%rsi,%r9,4)
-	LONG $0x0002ba41; WORD $0x0000  // movl         $2, %r10d
-	LONG $0x01077c80; BYTE $0x00  // cmpb         $0, $1(%rdi,%rax)
-	LONG $0xffb4890f; WORD $0xffff  // jns          LBB0_37, $-76(%rip)
-	LONG $0x44b60f44; WORD $0x0207  // movzbl       $2(%rdi,%rax), %r8d
+	LONG $0xffd5890f; WORD $0xffff  // jns          LBB0_37, $-43(%rip)
+	LONG $0x44b60f44; WORD $0x0107  // movzbl       $1(%rdi,%rax), %r8d
 	LONG $0x7fe08341  // andl         $127, %r8d
-	LONG $0x0ee0c141  // shll         $14, %r8d
-	WORD $0x0941; BYTE $0xd8  // orl          %ebx, %r8d
+	LONG $0x07e0c141  // shll         $7, %r8d
+	WORD $0x0945; BYTE $0xd0  // orl          %r10d, %r8d
 	LONG $0x8e048946  // movl         %r8d, (%rsi,%r9,4)
-	LONG $0x0003ba41; WORD $0x0000  // movl         $3, %r10d
+	LONG $0x000002b9; BYTE $0x00  // movl         $2, %ecx
+	LONG $0x01077c80; BYTE $0x00  // cmpb         $0, $1(%rdi,%rax)
+	LONG $0xffb0890f; WORD $0xffff  // jns          LBB0_37, $-80(%rip)
+	LONG $0x54b60f44; WORD $0x0207  // movzbl       $2(%rdi,%rax), %r10d
+	LONG $0x7fe28341  // andl         $127, %r10d
+	LONG $0x0ee2c141  // shll         $14, %r10d
+	WORD $0x0945; BYTE $0xc2  // orl          %r8d, %r10d
+	LONG $0x8e148946  // movl         %r10d, (%rsi,%r9,4)
+	LONG $0x000003b9; BYTE $0x00  // movl         $3, %ecx
 	LONG $0x02077c80; BYTE $0x00  // cmpb         $0, $2(%rdi,%rax)
-	LONG $0xff8e890f; WORD $0xffff  // jns          LBB0_37, $-114(%rip)
-	LONG $0x075cb60f; BYTE $0x03  // movzbl       $3(%rdi,%rax), %ebx
-	WORD $0xe383; BYTE $0x7f  // andl         $127, %ebx
-	WORD $0xe3c1; BYTE $0x15  // shll         $21, %ebx
-	WORD $0x0944; BYTE $0xc3  // orl          %r8d, %ebx
-	LONG $0x8e1c8942  // movl         %ebx, (%rsi,%r9,4)
-	LONG $0x0004ba41; WORD $0x0000  // movl         $4, %r10d
+	LONG $0xff8b890f; WORD $0xffff  // jns          LBB0_37, $-117(%rip)
+	LONG $0x44b60f44; WORD $0x0307  // movzbl       $3(%rdi,%rax), %r8d
+	LONG $0x7fe08341  // andl         $127, %r8d
+	LONG $0x15e0c141  // shll         $21, %r8d
+	WORD $0x0945; BYTE $0xd0  // orl          %r10d, %r8d
+	LONG $0x8e048946  // movl         %r8d, (%rsi,%r9,4)
+	LONG $0x000004b9; BYTE $0x00  // movl         $4, %ecx
 	LONG $0x03077c80; BYTE $0x00  // cmpb         $0, $3(%rdi,%rax)
-	LONG $0xff6b890f; WORD $0xffff  // jns          LBB0_37, $-149(%rip)
+	LONG $0xff66890f; WORD $0xffff  // jns          LBB0_37, $-154(%rip)
 	LONG $0x074cb60f; BYTE $0x04  // movzbl       $4(%rdi,%rax), %ecx
 	WORD $0xe1c1; BYTE $0x1c  // shll         $28, %ecx
-	WORD $0xd909  // orl          %ebx, %ecx
+	WORD $0x0944; BYTE $0xc1  // orl          %r8d, %ecx
 	LONG $0x8e0c8942  // movl         %ecx, (%rsi,%r9,4)
-	LONG $0x0005ba41; WORD $0x0000  // movl         $5, %r10d
-	LONG $0xffff52e9; BYTE $0xff  // jmp          LBB0_37, $-174(%rip)
+	LONG $0x000005b9; BYTE $0x00  // movl         $5, %ecx
+	LONG $0xffff4de9; BYTE $0xff  // jmp          LBB0_37, $-179(%rip)
 LBB0_13:
 	WORD $0xc031  // xorl         %eax, %eax
 LBB0_38:
@@ -389,7 +388,7 @@ LBB0_38:
 	WORD $0x5f41  // popq         %r15
 	BYTE $0x5d  // popq         %rbp
 	BYTE $0xc3  // retq         
-	QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; LONG $0x00000000; BYTE $0x00  // .p2align 12, 0x00
+	QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000; QUAD $0x0000000000000000  // .p2align 12, 0x00
 _combined_lookup:
 	BYTE $0x00  // .byte 0
 	BYTE $0x06  // .byte 6
@@ -8518,7 +8517,7 @@ _masked_vbyte_decode:
 	MOVQ out+8(FP), SI
 	MOVQ length+16(FP), DX
 	CALL ·__native_entry__+160(SB)  // _masked_vbyte_decode
-	MOVQ AX, consumed+24(FP)
+	MOVQ AX, consumedBytes+24(FP)
 	RET
 
 _stack_grow:
